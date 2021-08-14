@@ -40,17 +40,28 @@
   document.getElementById('generate').addEventListener('click', event => {
     event.preventDefault()
 
-      let length = prompt('Please choose a password that is at least 8 characters long, but no more than 128.')
+      let length =''
 
-      while (length < 8 || length > 128) {
-        alert('Please enter the correct amount of characters.')
+      let count = 0
+
+      do{
+        if (count > 0 ) {
+         alert('Please enter the correct amount of characters.') 
+        }
         length = prompt('Please choose a password that is at least 8 characters long, but no more than 128.')
-      }
+        count++
+      } while (length < 8 || length > 128 || isNaN(length))
 
-      let lowercaseRes = prompt('Do you want lowercase?')
-      let uppercaseRes = prompt('Do you want uppercase?')
-      let numericRes = prompt('Do you want numeric?')
-      let specialRes = prompt('Do you want special character?')
+      
+      // while (length < 8 || length > 128) {
+      //   alert('Please enter the correct amount of characters.')
+      //   length = prompt('Please choose a password that is at least 8 characters long, but no more than 128.')
+      // }
+
+      let lowercaseRes = prompt('Enter Y if you want lowercase')
+      let uppercaseRes = prompt('Enter Y if you want uppercase?')
+      let numericRes = prompt('Enter Y if you want numeric?')
+      let specialRes = prompt('Enter Y if you want  special character?')
 
       const lowercase = 'abcdefghijklmnopqrstuvwxyz'
       const uppercase = 'ABCDEFGHIJKLOMNPQRSTUVWXYZ'
@@ -60,23 +71,27 @@
       let tempPass = ''
       let randomPass = ''
 
-      if (lowercaseRes) {
+      if (lowercaseRes === Y) {
         tempPass += lowercase
       }
-      if (uppercaseRes) {
+      if (uppercaseRes === Y) {
         tempPass += uppercase
       }
-      if (numericRes) {
+      if (numericRes === Y) {
         tempPass += numeric
       }
-      if (specialRes) {
+      if (specialRes === Y) {
         tempPass += special
       }
+
+      // console.log(length)
 
       for (let i = 0; i < length; i++) {
         randomPass += tempPass[Math.floor(Math.random() * tempPass.length)]
       }
 
+      console.log(randomPass)
+      
       document.getElementById('password').textContent = randomPass;
     })
 </script>

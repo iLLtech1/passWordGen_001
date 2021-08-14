@@ -1,19 +1,17 @@
-
-
 document.getElementById('generate').addEventListener('click', event => {
   event.preventDefault()
 
   let length = prompt('Please choose a password that is at least 8 characters long, but no more than 128.')
 
-  while (length < 8 || > 128) {
+  while (length < 8 || length > 128) {
     alert('Please enter the correct amount of characters.')
     length = prompt('Please choose a password that is at least 8 characters long, but no more than 128.')
   }
 
-  let lowercaseRes = comfirm('lowercase?')
-  let uppercaseRes = comfirm('uppercase?')
-  let numericRes = comfirm('numeric?')
-  let specialRes = comfirm('special character?')
+  let lowercaseRes = prompt('Do you want lowercase?')
+  let uppercaseRes = prompt('Do you want uppercase?')
+  let numericRes = prompt('Do you want numeric?')
+  let specialRes = prompt('Do you want special character?')
 
   const lowercase = 'abcdefghijklmnopqrstuvwxyz'
   const uppercase = 'ABCDEFGHIJKLOMNPQRSTUVWXYZ'
@@ -36,12 +34,9 @@ document.getElementById('generate').addEventListener('click', event => {
     tempPass += special
   }
 
-  length = 8
   for (let i = 0; i < length; i++) {
-    randomPass += temPass[Math.floor(Math.random() * tempPass.length)]
+    randomPass += tempPass[Math.floor(Math.random() * tempPass.length)]
   }
 
-  document.getElementById('password').textContent = randomPass
+  document.getElementById('password').textContent = randomPass;
 })
-
-
