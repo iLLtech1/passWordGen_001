@@ -1,4 +1,85 @@
-.background{
+.wrapper {
+  background-color: #ffd100;
+}
 
+.card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 340px;
+  padding: 30px 40px;
+}
 
+.card-header {
+  background-color: #333533;
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px 0px;
+  color: hsl(206, 17%, 28%);
+  font-size: 18px;
+  margin: 0 auto;
+  max-width: 250px;
+  padding: 30px 40px;
+}
+
+}
+
+.card-body {
+  background-color: #ffee32;
+ 
+}
+
+}
+
+.card-footer {
+  background-color: #202020;
+ 
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+@media pmly screen and (max-width: 765px) {
+  .container {
+    ;
+    ex-direction: column
+  }
+  .tall {
+    height: 500px!important;
+    max-height: 500px!important;
+  }
+  .box-callout figure:hover figcaption {
+    max-height: 500px;
+  }
+  .box-callout figcaption {
+    top: 0;
+  }
 }
